@@ -1,0 +1,7 @@
+name: EntityTTL
+main: dev.warriorrr.entityttl.EntityTTL
+version: "${version}"
+api-version: '1.19'
+author: Warriorrr
+
+folia-supported: true
