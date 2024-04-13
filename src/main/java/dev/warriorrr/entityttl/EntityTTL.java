@@ -26,6 +26,13 @@ public class EntityTTL extends JavaPlugin implements Listener {
     public void loadConfig() {
         final ConfigurationSection entities = getConfig().getConfigurationSection("entities");
 
+        if (entities == null || entities.getKeys(false).isEmpty()) {
+            getConfig().createSection("entities");
+            getConfig().set("entities.snowball", -1);
+            saveConfig();
+            return;
+        }
+
         for (final String entity : entities.getKeys(false)) {
             final NamespacedKey key = NamespacedKey.fromString(entity);
 
