@@ -62,12 +62,14 @@ public class EntityTTL extends JavaPlugin implements Listener {
         if (removeTicks == null)
             return;
 
+        final long livedTicks = entity.getTicksLived();
+
         // Remove immediately
-        if (removeTicks == 0) {
+        if (removeTicks == 0 || livedTicks >= removeTicks) {
             entity.getScheduler().run(this, task -> entity.remove(), () -> {});
             return;
         }
 
-        entity.getScheduler().runDelayed(this, task -> entity.remove(), () -> {}, removeTicks);
+        entity.getScheduler().runDelayed(this, task -> entity.remove(), () -> {}, removeTicks - livedTicks);
     }
 }
