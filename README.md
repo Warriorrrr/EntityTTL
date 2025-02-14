@@ -3,6 +3,9 @@
 A plugin that automatically removes entities after a configurable amount of time,
 intended to combat simple projectile based lag machines.
 
+> [!NOTE]
+> This plugin is mainly obsolete on modern versions of paper that have the [entity despawn time](https://docs.papermc.io/paper/reference/world-configuration#entities_spawning_despawn_time) options.
+
 ## Requirements
 Paper 1.19.4 or up
 
